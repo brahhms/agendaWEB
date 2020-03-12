@@ -1,0 +1,75 @@
+
+body{
+    background-color: lightsteelblue;
+}
+.contenedor{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px 10px;
+    border: none; 
+}
+.calendario{
+    width: 100%;
+    min-width: 650px;
+    border:1px solid rgba(0,0,0,.125);
+    border-top: 0;
+}
+
+.dias-header > span, .columna{
+    text-align: center;
+    width: 14.284%;
+    padding: 0;
+    margin: 0;
+}
+
+.columna{
+    padding: 1px;
+}
+
+.card{
+    min-height: 100px;
+}
+
+.dias-header{
+    background-color:#FFFFFF5C;
+    background-color: #F4BC5B;
+    font-weight: 800;
+    color: linen; 
+}
+
+
+
+.dias-header, .fila{
+    padding: 0;
+    margin: 0;
+}
+.card-header{
+    color: lightslategrey;
+}
+
+.date-buttons{
+    font-size: 2.5em;
+    margin: 0 auto;
+    text-align: center;  
+    color:#FFFFFF5F;
+}
+.date-buttons > span:hover{
+    color: #FFFFFF;
+}
+
+
+.evento{
+    font-size: xx-small;
+    width: 100%;
+    margin-bottom: 1px;
+    background-color: rgba(4, 42, 255, 0.1);;
+}
+
+.nav>span{
+    margin: 0 4px 4px 0;  
+    color: #0000005F;
+}
+.nav>span:hover{
+    color: #000;
+}

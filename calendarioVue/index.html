@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/7a01938322.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+ 
+<div id="app">
+      
+<div class="contenedor" >
+  
+  <div class="date-buttons">
+    <span style="font-size: 1em; ">
+      <i  @click="prevMonth()" class="fas fa-chevron-left"></i>
+    </span>
+    
+    <b>{{monthName}}</b>
+  
+    <span style="font-size: 1em;">
+      <i @click="nextMonth()" class="fas fa-chevron-right"></i>
+    </span>
+  </div>
+
+  
+  <div class="nav">
+
+    <span  class="btn" v-for="c of calendars" v-bind:style="{ 'background-color': c.color }" >
+      {{c.nombre}}
+    </span>
+
+    <span style="font-size: 1.5em;" class="btn">
+      <i class="far fa-calendar-plus"></i>
+    </span>
+  </div>
+
+  <!-- inicio de calendario -->
+  <div class="calendario">
+
+    <div class="row dias-header" >
+      <span v-for="name of daysNames" >{{name}}</span>
+    </div>
+
+    <div v-for='row of calendar' class="row fila">
+      <div v-for='card of row' @click="selectDate(card.date)" class="col columna">          
+        <div v-if="card.date != undefined" class="card">
+          <div class="card-header text-right p-0 pr-1 ">
+            {{card.date}}
+          </div>
+          <div class="card-body p-1">  
+            <div class="evento" v-for='activity of card.activities'  v-bind:style="{ 'background-color': activity.color }"  >
+              {{activity.nombre}}
+            </div>
+          </div>
+        </div>    
+      </div> 
+    </div> 
+  
+    <input type="hidden" name="date" v-model.number="selectedDate"></input>
+
+  </div>
+  <!-- fin de calendario -->
+ 
+
+</div>
+
+   
+
+
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
